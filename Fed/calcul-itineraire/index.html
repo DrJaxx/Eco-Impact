@@ -1,0 +1,61 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Eco-Impact</title>
+    <link rel="stylesheet" href="jquery-ui-1.8.12.custom.css" type="text/css" /> 
+  </head>
+  <style type="text/css">
+    body{font-family:Arial;background:#000000;margin:0px;padding:0px;}
+    #container{position:relative;width:990px;margin:auto;background:#FFFFFF;padding:20px 0px 20px 0px;}
+    #container h1{margin:0px 0px 10px 20px;}
+
+    #container #panel{width:700px;margin:auto;}
+    #container #destinationForm{margin:0px 0px 20px 0px;background:#EEEEEE;padding:10px 20px;border:solid 1px #C0C0C0;}
+    #container #destinationForm input[type=text]{border:solid 1px #C0C0C0;}
+  </style>
+  <body>
+    <div id="container">
+        <h1>Eco-Impact</h1>
+        <div id="destinationForm">
+            <form action="" method="get" name="direction" id="direction">
+                <label>Point de départ :</label>
+                <input type="text" name="origin" id="origin">
+                <label>Destination :</label>
+                <input type="text" name="destination" id="destination">
+                <input type="button" value="Calculer l'itinéraire" onclick="javascript:calculate()">
+            </form>
+        </div>
+        <div id="panel"></div>
+
+        <div id="duration-essence">duration-essence: </div> <!-- ok -->
+        <div id="duration-diesel">duration-diesel: </div> <!-- ok -->
+        <div id="duration-velo">duration-velo: </div> 
+        <div id="duration-autolib">duration-autolib: </div> 
+        <div id="duration-transports">duration-transports: </div>
+        <div id="duration-pieds">duration-pieds: </div>
+        <div id="eco-essence">eco-essence: </div> 
+        <div id="eco-diesel">eco-diesel: </div>
+        <div id="eco-velo">eco-velo: </div> 
+        <div id="eco-autolib">eco-autolib: </div> 
+        <div id="eco-transports">eco-transports: </div>
+        <div id="eco-pieds">eco-pieds: </div>
+        <div id="prix-essence">prix-essence: </div> 
+        <div id="prix-diesel">prix-diesel: </div>
+        <div id="prix-velo">prix-velo: </div> 
+        <div id="prix-autolib">prix-autolib: </div> 
+        <div id="prix-transports">prix-transports: </div>
+        <div id="prix-pieds">prix-pieds: </div> 
+        
+
+
+    </div>
+ 
+    
+    <!-- Include Javascript -->
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="jquery-ui-1.8.12.custom.min.js"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&language=fr"></script>
+    <script type="text/javascript" src="functions.js"></script>
+  </body>
+</html>
