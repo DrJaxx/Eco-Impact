@@ -1,25 +1,63 @@
-<!DOCTYPE html>
-<html>
+<?php 
+	session_start();
+?>
+<!doctype html>
+<html lang="fr-FR">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-	<title>Eco'Impact</title>
-	<meta name="description" content="">
-
-	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-	<?php require_once("php/token.php"); ?>
-	<script src="http://axe.mappy.com/1v1/init/get.aspx?auth=<?php echo $token; ?>&version=2.10&solution=ajax"/>
-</script>
-  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"  />
-  
-
-
-
-	
+	<meta charset="UTF-8">
+	<title>Éco'Impact</title>
+	<link href='http://fonts.googleapis.com/css?family=Holtwood+One+SC' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	<script src="js/custom.js"></script>
 </head>
 <body>
-<?php echo "bb";?>
+	<div id="animation"></div>
+	<div id="formulaire">
+		<form name="form" id="form" method="post">
+			<div class="inputs_text">
+		           <input type="text" id="first_input" class="input_text" name="depart" id="depart" placeholder='Départ...'/>
+		           <input type="text" class="input_text" name="arrive" id="arrive" placeholder='Arrivé...'/>
+			</div>
+			<div id="form_button">
+					<input type="submit" id="address_submit" class="but_rechercher" value="Rechercher"></input>
+			</div>
+		</form>
+	</div>
+
+	<div id="conteneur">
+		<div  id="cercle">
+	
+		</div>
+		<div class="trait" id="velib">
+			<img src="img/velo.ico.png" alt="image velib" id="imgvelib" class="imgtrait">
+		</div>
+		<div class="trait" id="transport">
+			<img src="img/transport.ico.png" alt="image transport" id="imgtransport" class="imgtrait">
+		</div>
+		<div class="trait" id="pied">
+			<img src="img/pied.ico.png" alt="image pied" id="imgpied" class="imgtrait">
+		</div>
+		<div class="trait" id="autolib">
+			<img src="img/autolib.ico.png" alt="image autolib" id="imgautolib" class="imgtrait">
+		</div>
+		<div class="trait" id="diesel">
+			<img src="img/diesel.ico.png" alt="image diesel" id="imgdiesel" class="imgtrait">
+		</div>
+		<div class="trait" id="essence">
+			<img src="img/essence.ico.png" alt="image essence" id="imgessence" class="imgtrait">
+		</div>
+	</div>
+	
+	<div id="information">
+		<div id="infoTitle"></div>
+		<div class="info" id="temps">Durée : <span id="tempsData"></span></div>
+		<div class="info" id="distance">Distance : <span id="distancesData"></span></div>
+		<div class="info" id="cout">Coût : <span id="coutData"></span></div>
+		<div class="info" id="emission">Émission : <span id="emissionData"></span></div>
+	</div>
+
+>>>>>>> f19c677aa242f927e0732f206b2142e9f68d8449
 </body>
 </html>
