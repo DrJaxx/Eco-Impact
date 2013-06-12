@@ -2,7 +2,7 @@ var calculate;
 
 
 calculate = function(){
-
+    console.log("marche)");
     document.getElementById('first_input').value = document.getElementById('first_input').value+", Paris"
     document.getElementById('arrive').value = document.getElementById('arrive').value+", Paris"
     origin      = document.getElementById('first_input').value; // Le point départ

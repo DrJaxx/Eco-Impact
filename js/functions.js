@@ -1,10 +1,8 @@
 var calculate;
 
 
-
-
 calculate = function(){
-
+    
     document.getElementById('first_input').value = document.getElementById('first_input').value+", Paris"
     document.getElementById('arrive').value = document.getElementById('arrive').value+", Paris"
     origin      = document.getElementById('first_input').value; // Le point départ
@@ -112,6 +110,20 @@ calculate = function(){
 
 
         });
+
+        console.log(duration_car);
+        // console.log(duration_autolib);
+        // console.log(duration_velo);
+        // console.log(duration_pieds);
+        // console.log(duration_transports);
+        // console.log(CO2_essence);
+        // console.log(CO2_diesel);
+        // console.log(CO2_autolib);
+        // console.log(CO2_velo);
+        // console.log(CO2_pieds);
+        // console.log(prix_diesel);
+        // console.log(prix_essence);
+        // console.log(prix_autolib);
 
   
 
