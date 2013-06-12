@@ -58,6 +58,6 @@
 		<div class="info" id="emission">Émission : <span id="emissionData"></span></div>
 	</div>
 
->>>>>>> f19c677aa242f927e0732f206b2142e9f68d8449
+
 </body>
 </html>
