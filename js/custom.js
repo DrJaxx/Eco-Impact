@@ -194,6 +194,7 @@ function alignLineHeight(){
 
 
 $('#form').submit(function() {
+		calculate();
 		if(!$('#animation').hasClass('done')){
 		$('#formulaire').animate({
 			"left": 180,
