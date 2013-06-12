@@ -1,8 +1,6 @@
 var calculate;
 
 
-
-
 calculate = function(){
 
     document.getElementById('first_input').value = document.getElementById('first_input').value+", Paris"
