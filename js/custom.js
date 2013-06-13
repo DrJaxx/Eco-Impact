@@ -23,7 +23,7 @@ jQuery(document).ready(function(){
 	var wEssence;
 	var EssenceColor;
 
-	var baseW = 140;
+	var baseW = 90;
 	var baseH = 5;
 	var hsl = "96,63%";
 
@@ -72,28 +72,28 @@ function changeVal(id,w,h,c){
 }
 
 function alignLineHeight(){
-	hVelib = 20;
-	wVelib = 35;
+	hVelib = prix_velo*2;
+	wVelib = duration_velo;
 	VelibColor = "60%";
 
-	hTransport = 20;
-	wTransport = 25;
+	hTransport = prix_transports*2;
+	wTransport = duration_transports;
 	TransportColor = "40%";
 
-	hPied = 20;
-	wPied = 60;
+	hPied = 0;
+	wPied = duration_pieds;
 	PiedColor = "70%";
 
-	hAutolib = 30;
-	wAutolib = 20;
+	hAutolib = prix_autolib*2;
+	wAutolib = duration_autolib;
 	AutolibColor = "45%";
 
-	hDiesel = 20;
-	wDiesel = 20;
+	hDiesel = prix_diesel*2;
+	wDiesel = duration_car;
 	DieselColor = "30%";
 
-	hEssence = 20;
-	wEssence = 20;
+	hEssence = prix_essence*2;
+	wEssence = duration_car;
 	EssenceColor = "20%";
 
 
@@ -183,27 +183,33 @@ function alignLineHeight(){
 		},7000)
 	}
 
-
+ 
 }
 
 
 $('#form').submit(function() {
-		calculate();
+	calculate();
 
-		if(!$('#animation').hasClass('done')){
-		$('#formulaire').animate({
-			"left": 180,
-			"top": 50
-	  	},500);
+	if(!$('#animation').hasClass('done')){
+		$('#formulaire').fadeOut(250);
+		setTimeout(function(){
+			$('#formulaire').addClass('formulaire_top');
+			$('.input_text').addClass('left');
+			$('.but_rechercher').addClass('left');
+		},250)
+		setTimeout(function(){
+			$('#formulaire').fadeIn(500);
+		},7000)
+
 	}
-setTimeout(function(){
-
-	$('#cercle').fadeIn(1000);
 	setTimeout(function(){
+	$('#conteneur').animate( {"margin-top": "-50px"},500);
+		$('#cercle').fadeIn(1000);
+		setTimeout(function(){
 
-		alignLineHeight();
-	},1500)
-},500)
+			alignLineHeight();
+		},1500)
+	},500)
 
 
 	return false;
@@ -211,15 +217,56 @@ setTimeout(function(){
 
 
 $('.trait').click(function(){
+	var distance;
+	var prix;
+	var temps;
+	var co2;
 	var id = $(this).attr('id');
 	$('#information').stop().fadeOut(500);
 	setTimeout(function(){
 
-	$('#infoTitle').html();
-	$('#tempsData').html();
-	$('#distancesData').html();
-	$('#coutData').html();
-	$('#emissionData').html();
+		if(id=="velib"){
+			distance = distance_velo;
+			prix = prix_velo;
+			temps = duration_velo;
+			co2 = CO2_velo;
+		}
+		if(id=="transport"){
+			distance = distance_transports;
+			prix = prix_transports;
+			temps = duration_transports;
+			co2 = 0;
+		}
+		if(id=="pied"){
+			distance = distance_pieds;
+			prix = 0;
+			temps = duration_pieds;
+			co2 = CO2_pieds;
+		}
+		if(id=="autolib"){
+			distance = distance_autolib;
+			prix = prix_autolib;
+			temps = duration_autolib;
+			co2 = CO2_autolib;
+		}
+		if(id=="diesel"){
+			distance = distance_diesel;
+			prix = prix_diesel+1;
+			temps = duration_car;
+			co2 = CO2_diesel;
+		}
+		if(id=="essence"){
+			distance = distance_essence;
+			prix = prix_essence+1;
+			temps = duration_car;
+			co2 = CO2_essence;
+		}
+
+		$('#infoTitle').html(id);
+		$('#tempsData').html(temps+"min");
+		$('#distancesData').html(distance+"km");
+		$('#coutData').html(prix+"€");
+		$('#emissionData').html(co2+"g");
 
 	$('#information').fadeIn(500);
 		if(!$('#information').hasClass('activated')){
