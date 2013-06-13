@@ -80,11 +80,14 @@ calculate = function(){
               //CO2
               CO2_essence = Math.round((response.routes[0].legs[0].distance.value)*0.001*120);
               CO2_diesel = Math.round((response.routes[0].legs[0].distance.value)*0.001*137) ;
-              CO2_autolib = Math.round((response.routes[0].legs[0].distance.value)*0.001*50)
+              CO2_autolib = Math.round((response.routes[0].legs[0].distance.value)*0.001*50);
 
-              prix_diesel = (Math.round(((response.routes[0].legs[0].distance.value)*0.00001*1.289*5)*100))/100;
+              prix_diesel = Math.round(((response.routes[0].legs[0].distance.value)*0.00001*1.289*5)*100)/100;
+              prix_diesel = prix_diesel.toFixed(2);
               prix_essence = Math.round(((response.routes[0].legs[0].distance.value)*0.00001*1.487*5)*100)/100;
+              prix_essence = prix_essence.toFixed(2);
               prix_autolib = Math.round(((response.routes[0].legs[0].duration.value)*0.000276*14)*100)/100;
+              prix_autolib = prix_autolib.toFixed(2);
 
             }
 
