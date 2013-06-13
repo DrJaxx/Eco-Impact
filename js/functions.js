@@ -22,6 +22,17 @@ var distance_autolib = 0;
 var distance_velo = 0;
 var distance_pieds = 0;
 
+
+//fixed
+var prix_velo = 5;
+var prix_transports = 5;
+//distance
+var distance_transports = 0;
+var distance_essence = 0;
+var distance_diesel = 0;
+var distance_autolib = 0;
+var distance_velo = 0;
+var distance_pieds = 0;
 calculate = function(){
     
 
@@ -145,11 +156,13 @@ calculate = function(){
         // console.log(duration_velo);
         // console.log(duration_pieds);
         // console.log(duration_transports);
+
         // console.log(CO2_essence);
         // console.log(CO2_diesel);
         // console.log(CO2_autolib);
         // console.log(CO2_velo);
         // console.log(CO2_pieds);
+
         // console.log(prix_diesel);
         // console.log(prix_essence);
         // console.log(prix_autolib);

@@ -6,7 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Éco'Impact</title>
-	<link href='http://fonts.googleapis.com/css?family=Holtwood+One+SC' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Alef:400,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/style.css">
 	<script src="js/jquery.js"></script>
 	<script src="js/jquery-ui.js"></script>
@@ -19,19 +19,19 @@
 	<div id="formulaire">
 		<form name="form" id="form" method="post">
 			<div class="inputs_text">
-		           <input type="text" id="first_input" class="input_text" name="depart" id="depart" placeholder='Départ...'/>
-		           <input type="text" class="input_text" name="arrive" id="arrive" placeholder='Arrivé...'/>
+		           <input type="text" id="first_input" class="input_text" name="depart" id="depart" placeholder='Indiquez votre adresse ou gare de départ...'/>
+		           <input type="text" class="input_text" name="arrive" id="arrive" placeholder="Indiquez votre adresse ou gare d'arrivée"/>
 			</div>
 			<div id="form_button">
 					<input type="submit" id="address_submit" class="but_rechercher" value="Rechercher"></input>
 			</div>
 		</form>
-	</div>
 
+	</div>
+	<div id="logo"><img src="img/logo.png" alt="logo EcoImpact"></div>
 	<div id="conteneur">
 		<div  id="cercle">
-			<div id="gramme">85g</div>
-			<div id="phrase"> de CO² dans <br> l'air parisien</div>
+			<div id="phrase"> Indice de pollution <br> <span class="gramme" >50/100</span></div>
 		</div>
 		<div class="trait" id="velib">
 			<img src="img/velo.ico.png" alt="image velib" id="imgvelib" class="imgtrait">
@@ -54,12 +54,15 @@
 	</div>
 	
 	<div id="information">
-		<div id="infoTitle"></div>
-		<div class="info" id="temps">Durée : <span id="tempsData"></span></div>
-		<div class="info" id="distance">Distance : <span id="distancesData"></span></div>
-		<div class="info" id="cout">Coût : <span id="coutData"></span></div>
-		<div class="info" id="emission">Émission : <span id="emissionData"></span></div>
+		<div class="data" id="infoTitle"></div>
+		<div class="info" id="temps">Durée : <span class="data" id="tempsData"></span></div>
+		<div class="info" id="distance">Distance : <span class="data" id="distancesData"></span></div>
+		<div class="info" id="cout">Coût : <span class="data" id="coutData"></span></div>
+		<div class="info" id="emission">Émission : <span class="data" id="emissionData"></span></div>
 	</div>
+
+
+	<div id="route"></div>
 
 
 </body>
