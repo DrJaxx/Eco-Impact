@@ -2,11 +2,8 @@ var calculate;
 
 
 calculate = function(){
-    console.log("marche)");
-    document.getElementById('first_input').value = document.getElementById('first_input').value+", Paris"
-    document.getElementById('arrive').value = document.getElementById('arrive').value+", Paris"
-    origin      = document.getElementById('first_input').value; // Le point départ
-    destination = document.getElementById('arrive').value; // Le point d'arrivé
+    origin      = document.getElementById('origin').value; // Le point départ
+    destination = document.getElementById('destination').value; // Le point d'arrivé
     if(origin && destination){
         var request = {
             origin      : origin,
@@ -36,21 +33,23 @@ calculate = function(){
 
 
               duration_car = Math.round((response.routes[0].legs[0].duration.value)*0.0166);
+              // Display the duration:
+              document.getElementById('duration-essence').innerHTML += 
+              duration_car + " minutes";
 
-
-              duration_autolib=Math.round(duration_car*1.17);
-              
+              // Display the duration:
+              document.getElementById('duration-diesel').innerHTML += 
+              duration_car + " minutes";
 
               //CO2
               CO2_essence = Math.round((response.routes[0].legs[0].distance.value)*0.001*120);
               CO2_diesel = Math.round((response.routes[0].legs[0].distance.value)*0.001*137) ;
-              CO2_autolib = Math.round((response.routes[0].legs[0].distance.value)*0.001*50)
 
-              prix_diesel = Math.round(((response.routes[0].legs[0].distance.value)*0.00001*1.289*5)*100)/100;
-              prix_essence = Math.round(((response.routes[0].legs[0].distance.value)*0.00001*1.487*5)*100)/100;
-              prix_autolib = Math.round(((response.routes[0].legs[0].duration.value)*0.000276*14)*100)/100;
+              
 
 
+              document.getElementById('eco-essence').innerHTML += CO2_essence + "g"; 
+              document.getElementById('eco-diesel').innerHTML += CO2_diesel + "g";
 
 
               
@@ -65,10 +64,9 @@ calculate = function(){
 
 
               duration_velo = Math.round((response.routes[0].legs[0].duration.value)*0.0166);
-
-
-              CO2_velo = Math.round((response.routes[0].legs[0].duration.value)*2*0.0166);
-
+              // Display the duration:
+              document.getElementById('duration-velo').innerHTML += 
+              duration_velo + " minutes";
 
 
 
@@ -84,11 +82,9 @@ calculate = function(){
 
 
               duration_pieds = Math.round((response.routes[0].legs[0].duration.value)*0.0166);
-
-
-              CO2_pieds = Math.round((response.routes[0].legs[0].duration.value)*0.4*0.0166);
-
-             
+              // Display the duration:
+              document.getElementById('duration-pieds').innerHTML += 
+              duration_pieds + " minutes";
 
               
             }
@@ -102,7 +98,9 @@ calculate = function(){
 
 
               duration_transports = Math.round((response.routes[0].legs[0].duration.value)*0.0166);
-
+              // Display the duration:
+              document.getElementById('duration-transports').innerHTML += 
+              duration_transports + " minutes";
 
 
               
@@ -110,20 +108,6 @@ calculate = function(){
 
 
         });
-
-        console.log("duration_car");
-        console.log("duration_autolib");
-        console.log("duration_velo");
-        console.log("duration_pieds");
-        console.log("duration_transports");
-        console.log("CO2_essence");
-        console.log("CO2_diesel");
-        console.log("CO2_autolib");
-        console.log("CO2_velo");
-        console.log("CO2_pieds");
-        console.log("prix_diesel");
-        console.log("prix_essence");
-        console.log("prix_autolib");
 
   
 
