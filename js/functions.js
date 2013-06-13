@@ -97,7 +97,7 @@ calculate = function(){
 
 
               duration_velo = Math.round((response.routes[0].legs[0].duration.value)*0.0166);
-              distance_velo=Math.round((response.routes[0].legs[0].distance.value)*0.001
+              distance_velo=Math.round((response.routes[0].legs[0].distance.value)*0.001);
 
               CO2_velo = Math.round((response.routes[0].legs[0].duration.value)*2*0.0166);
 
@@ -126,7 +126,7 @@ calculate = function(){
         directionsService.route(request3, function(response, status){ // Envoie de la requête pour calculer le parcours
             if(status == google.maps.DirectionsStatus.OK){
 
-                distance_pieds=Math.round((response.routes[0].legs[0].distance.value)*0.001
+                distance_pieds=Math.round((response.routes[0].legs[0].distance.value)*0.001);
               duration_pieds = Math.round((response.routes[0].legs[0].duration.value)*0.0166);
 
 
