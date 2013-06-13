@@ -124,6 +124,7 @@ calculate = function(){
         // console.log(prix_diesel);
         // console.log(prix_essence);
         // console.log(prix_autolib);
+        return false;
 
   
 
