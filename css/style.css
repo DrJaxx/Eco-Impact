@@ -28,6 +28,10 @@ body{
 	/*float: left;*/
 }
 
+.input_text:focus{
+	border: 2px solid #017a01;
+}
+
 #first_input{
 	margin-right: 20px;
 }
@@ -44,6 +48,7 @@ body{
 }
 
 .but_rechercher {
+	margin-top: 10px;
  -moz-box-shadow:inset 0px 1px 0px 0px #caefab;
  -webkit-box-shadow:inset 0px 1px 0px 0px #caefab;
  box-shadow:inset 0px 1px 0px 0px #caefab;
