@@ -68,6 +68,11 @@ body{
  padding:6px 25px;
  text-decoration:none;
  text-shadow:1px 1px 0px #aade7c;
+-webkit-transition:top 0.3s,border 0.5s,background 0.5s;
+-moz-transition:top 0.3s,border 0.5s,background 0.5s;
+-o-transition:top 0.3s,border 0.5s,background 0.5s;
+-ms-transition:top 0.3s,border 0.5s,	background 0.5s;
+transition:top 0.3s,border 0.5s,	background 0.5s;
 }.but_rechercher:hover {
  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #5cb811), color-stop(1, #77d42a) );
  background:-moz-linear-gradient( center top, #5cb811 5%, #77d42a 100% );
@@ -102,10 +107,24 @@ body{
 	border-radius: 150px;
 	border: 3px solid #E79319;
 	font-family: 'Holtwood One SC', serif;
-	line-height: 200px;
-	font-size: 3em;
-	text-align: center;
+	font-size: 1em;
 	color: black;
+	text-align: center;
+}
+
+#gramme{
+	width: 200px;
+	height: 100px;
+	line-height: 100px;
+	font-size: 3em;
+
+}
+#phrase{
+	width: 200px;
+	height: 100px;
+	font-size: 1em;
+
+
 }
 
 .trait{
