@@ -12,6 +12,15 @@ var CO2_pieds = 0;
 var prix_diesel = 0;
 var prix_essence = 0;
 var prix_autolib = 0;
+var prix_velo = 0;
+var prix_transports = 0;
+//distance
+var distance_transports = 0;
+var distance_essence = 0;
+var distance_diesel = 0;
+var distance_autolib = 0;
+var distance_velo = 0;
+var distance_pieds = 0;
 
 calculate = function(){
     
@@ -53,7 +62,9 @@ calculate = function(){
 
               duration_autolib=Math.round(duration_car*1.17);
              // console.log("autolib"+duration_autolib);
-
+             distance_diesel=Math.round((response.routes[0].legs[0].distance.value)*0.001
+             distance_essence = distance_diesel;
+             distance_autolib=Math.round((response.routes[0].legs[0].distance.value)*0.00105
 
               //CO2
               CO2_essence = Math.round((response.routes[0].legs[0].distance.value)*0.001*120);
@@ -75,9 +86,24 @@ calculate = function(){
 
 
               duration_velo = Math.round((response.routes[0].legs[0].duration.value)*0.0166);
-
+              distance_velo=Math.round((response.routes[0].legs[0].distance.value)*0.001
 
               CO2_velo = Math.round((response.routes[0].legs[0].duration.value)*2*0.0166);
+
+              if(duration_velo<=30){
+                prix_velo=0;
+              }
+              else if(duration_velo<=60)
+              {
+                prix_velo=1;
+              }  
+              else if(duration_velo<=90)
+              {
+                prix_velo=3;
+              }  
+              else{
+                prix_velo=3+Math.ceil((duration_velo-90)/30)*4
+              }
 
 
             }
@@ -89,7 +115,7 @@ calculate = function(){
         directionsService.route(request3, function(response, status){ // Envoie de la requête pour calculer le parcours
             if(status == google.maps.DirectionsStatus.OK){
 
-
+                distance_pieds=Math.round((response.routes[0].legs[0].distance.value)*0.001
               duration_pieds = Math.round((response.routes[0].legs[0].duration.value)*0.0166);
 
 
@@ -106,6 +132,7 @@ calculate = function(){
 
 
               duration_transports = Math.round((response.routes[0].legs[0].duration.value)*0.0166);
+              prix_transports = 1.70;
 
             }
 
