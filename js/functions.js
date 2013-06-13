@@ -62,9 +62,9 @@ calculate = function(){
 
               duration_autolib=Math.round(duration_car*1.17);
              // console.log("autolib"+duration_autolib);
-             distance_diesel=Math.round((response.routes[0].legs[0].distance.value)*0.001
+             distance_diesel=Math.round((response.routes[0].legs[0].distance.value)*0.001);
              distance_essence = distance_diesel;
-             distance_autolib=Math.round((response.routes[0].legs[0].distance.value)*0.00105
+             distance_autolib=Math.round((response.routes[0].legs[0].distance.value)*0.00105);
 
               //CO2
               CO2_essence = Math.round((response.routes[0].legs[0].distance.value)*0.001*120);
