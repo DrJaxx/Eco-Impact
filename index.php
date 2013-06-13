@@ -30,7 +30,8 @@
 
 	<div id="conteneur">
 		<div  id="cercle">
-	
+			<div id="gramme">85g</div>
+			<div id="phrase"> de CO² dans <br> l'air parisien</div>
 		</div>
 		<div class="trait" id="velib">
 			<img src="img/velo.ico.png" alt="image velib" id="imgvelib" class="imgtrait">

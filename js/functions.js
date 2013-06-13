@@ -1,8 +1,21 @@
 var calculate;
-
+var duration_car = 0;
+var duration_autolib = 0;
+var duration_velo = 0;
+var duration_pieds = 0;
+var duration_transports = 0;
+var CO2_essence = 0;
+var CO2_diesel = 0;
+var CO2_autolib = 0;
+var CO2_velo = 0;
+var CO2_pieds = 0;
+var prix_diesel = 0;
+var prix_essence = 0;
+var prix_autolib = 0;
 
 calculate = function(){
     
+
     document.getElementById('first_input').value = document.getElementById('first_input').value+", Paris"
     document.getElementById('arrive').value = document.getElementById('arrive').value+", Paris"
     origin      = document.getElementById('first_input').value; // Le point départ
@@ -36,10 +49,11 @@ calculate = function(){
 
 
               duration_car = Math.round((response.routes[0].legs[0].duration.value)*0.0166);
-
+              console.log("duration top "+duration_car);
 
               duration_autolib=Math.round(duration_car*1.17);
-              
+             // console.log("autolib"+duration_autolib);
+
 
               //CO2
               CO2_essence = Math.round((response.routes[0].legs[0].distance.value)*0.001*120);
@@ -50,10 +64,6 @@ calculate = function(){
               prix_essence = Math.round(((response.routes[0].legs[0].distance.value)*0.00001*1.487*5)*100)/100;
               prix_autolib = Math.round(((response.routes[0].legs[0].duration.value)*0.000276*14)*100)/100;
 
-
-
-
-              
             }
 
 
@@ -70,9 +80,6 @@ calculate = function(){
               CO2_velo = Math.round((response.routes[0].legs[0].duration.value)*2*0.0166);
 
 
-
-
-              
             }
 
 
@@ -88,9 +95,6 @@ calculate = function(){
 
               CO2_pieds = Math.round((response.routes[0].legs[0].duration.value)*0.4*0.0166);
 
-             
-
-              
             }
 
 
@@ -103,15 +107,13 @@ calculate = function(){
 
               duration_transports = Math.round((response.routes[0].legs[0].duration.value)*0.0166);
 
-
-
-              
             }
 
 
         });
+        // console.log("duration bot "+duration_car);
 
-        console.log(duration_car);
+        // console.log(duration_car);
         // console.log(duration_autolib);
         // console.log(duration_velo);
         // console.log(duration_pieds);
@@ -127,12 +129,6 @@ calculate = function(){
         return false;
 
   
-
-
-
-
-
-
     }
 };
 
