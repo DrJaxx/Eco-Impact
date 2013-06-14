@@ -36,10 +36,10 @@ var distance_pieds = 0;
 calculate = function(){
     
 
-    document.getElementById('first_input').value = document.getElementById('first_input').value+", Paris"
-    document.getElementById('arrive').value = document.getElementById('arrive').value+", Paris"
-    origin      = document.getElementById('first_input').value; // Le point départ
-    destination = document.getElementById('arrive').value; // Le point d'arrivé
+
+    origin      = document.getElementById('first_input').value+", Paris"; // Le point départ
+    destination = document.getElementById('arrive').value+", Paris"; // Le point d'arrivé
+
     if(origin && destination){
         var request = {
             origin      : origin,
@@ -146,8 +146,9 @@ calculate = function(){
 
 
               duration_transports = Math.round((response.routes[0].legs[0].duration.value)*0.0166);
+              distance_transports = Math.round((response.routes[0].legs[0].distance.value)*0.001);
               prix_transports = 1.70;
-
+              CO2_transports = Math.round((response.routes[0].legs[0].distance.value)*0.001*6.62)
             }
 
 
