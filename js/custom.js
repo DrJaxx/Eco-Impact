@@ -188,29 +188,45 @@ function alignLineHeight(){
 
 
 $('#form').submit(function() {
-	calculate();
+	var val1  = document.getElementById('first_input').value;
+	var val2  = document.getElementById('arrive').value;
+	if(!(val1=="" || val2=="")){
+		$('.input_text').removeClass('input_error');
+		calculate();
+		$('#phrase_intro').fadeOut(250);
+		$('#logo').addClass('logo_small');
+		if(!$('#animation').hasClass('done')){
+			$('#formulaire').fadeOut(250);
+			setTimeout(function(){
+				$('#formulaire').addClass('formulaire_top');
+				$('.input_text').addClass('left');
+				$('.but_rechercher').addClass('left');
+			},250)
+			setTimeout(function(){
+				$('#formulaire').fadeIn(500);
+			},7000)
 
-	if(!$('#animation').hasClass('done')){
-		$('#formulaire').fadeOut(250);
+		}
 		setTimeout(function(){
-			$('#formulaire').addClass('formulaire_top');
-			$('.input_text').addClass('left');
-			$('.but_rechercher').addClass('left');
-		},250)
-		setTimeout(function(){
-			$('#formulaire').fadeIn(500);
-		},7000)
+		$('#conteneur').animate( {"margin-top": "-50px"},500);
+			$('#cercle').fadeIn(1000);
+			setTimeout(function(){
 
+				alignLineHeight();
+			},1500)
+
+		
+		},500)
+
+		
+	}else{
+		if(val1==""){
+			$('#first_input').addClass('input_error');
+		}
+		if(val2==""){
+			$('#arrive').addClass('input_error');
+		}
 	}
-	setTimeout(function(){
-	$('#conteneur').animate( {"margin-top": "-50px"},500);
-		$('#cercle').fadeIn(1000);
-		setTimeout(function(){
-
-			alignLineHeight();
-		},1500)
-	},500)
-
 
 	return false;
 });
@@ -263,10 +279,10 @@ $('.trait').click(function(){
 		}
 
 		$('#infoTitle').html(id);
-		$('#tempsData').html(temps+"min");
-		$('#distancesData').html(distance+"km");
-		$('#coutData').html(prix+"€");
-		$('#emissionData').html(co2+"g");
+		$('#tempsData').html(temps);
+		$('#distancesData').html(distance);
+		$('#coutData').html(prix);
+		$('#emissionData').html(co2);
 
 	$('#information').fadeIn(500);
 		if(!$('#information').hasClass('activated')){

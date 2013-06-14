@@ -11,9 +11,43 @@ ol, ul, li {  list-style: none; }
 iframe{margin: 0; border : 0;}
 body{
 	color: white;
+	font-weight: bold;
+	font-family: 'Alef', sans-serif;
+}
+#logo{
+	width: 436px;
+	height: 176px;
+	position: absolute;
+	top: 50px;
+	left: 50%;
+	margin-left: -218px;
+}
+#logo>img{
+	width: 100%;
+	height: 100%;
 }
 
+.logo_small{
+	width: 218px !important;
+	height: 88px !important;
+	margin-left: 0 !important;
+	left: 20px !important;
+	top: 0px !important;
 
+}
+
+#phrase_intro{
+	width: 800px;
+	color: black;
+	font-size: 1.5em;
+	position: absolute;
+	top: 230px;
+	left: 50%;
+	margin-left: -400px;
+	z-index: 200;
+	text-align: center;
+
+}
 /* FORMULAIRE*/
 .input_text{
 	width: 300px;
@@ -26,6 +60,8 @@ body{
 	margin-top: 10px;
 	display: block;
 	margin-top: 13px;
+	text-transform: none;
+	font-size: 0.8em;
 }
 
 .input_text:focus{
@@ -35,12 +71,15 @@ body{
 #first_input{
 	margin-right: 20px;
 }
+.input_error{
+	border: 2px solid #FF2200;
+}
 #formulaire{
 	width: 330px;
 	height: 100px;
 	position: absolute;
 	top: 50%;
-	margin-top: -50px;
+	margin-top: -20px;
 	left: 50%;
 	margin-left: -175px;
 	text-align: center;
@@ -48,15 +87,14 @@ body{
 }
 
 .formulaire_top{
-	width: 840px!important;
+	width: 860px!important;
 	height: 50px!important;
-	background-color: #000;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
 	top: -5px!important;
 	margin-top: 0!important;
-	margin-left: -460px!important;
+	margin-left: -420px!important;
 	padding: 0 20px;
 }
 
@@ -89,6 +127,7 @@ body{
 -ms-transition:top 0.3s,border 0.5s,	background 0.5s,float 0.5s;
 transition:top 0.3s,border 0.5s,	background 0.5s,float 0.5s;
 cursor: pointer;
+margin-left: 10px;
 }.but_rechercher:hover {
  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #5cb811), color-stop(1, #77d42a) );
  background:-moz-linear-gradient( center top, #5cb811 5%, #77d42a 100% );
@@ -123,7 +162,7 @@ cursor: pointer;
 	-moz-border-radius: 150px;
 	border-radius: 150px;
 	border: 3px solid #E79319;
-	font-family: 'Holtwood One SC', serif;
+	font-family: 'Alef', sans-serif;
 	font-size: 1em;
 	color: black;
 	text-align: center;
@@ -131,15 +170,15 @@ cursor: pointer;
 
 .gramme{
 
-	font-size: 1.7em;
+	font-size: 1.8em;
 
 }
 #phrase{
 	width: 150px;
 	height: 100px;
-	line-height: 30px;
+	line-height: 20px;
 	font-size: 0.8em;
-	margin-top: 25px;
+	margin-top: 46px;
 }
 
 .trait{
@@ -262,30 +301,35 @@ cursor: pointer;
 
 #information{
 	height: 200px;
-	width: 300px;
+	width: 350px;
 	position: absolute;
 	top: 50%;
 	left: 200px;
 	margin-top: -100px;
-	-webkit-border-radius: 25px;
-	-moz-border-radius: 25px;
-	border-radius: 25px;
-	border: 3px solid #E79319;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	border: 2px solid #E79319;
 	color: black;
-		font-family: 'Holtwood One SC', serif;
+	font-family: 'Alef', sans-serif;
 	font-size: 1em;
 	padding: 20px;
+	-moz-box-shadow: 2px 2px 11px 0px #656565;
+-webkit-box-shadow: 2px 2px 11px 0px #656565;
+-o-box-shadow: 2px 2px 11px 0px #656565;
+box-shadow: 2px 2px 11px 0px #656565;
+filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=135, Strength=5);
 }
 
 #infoTitle{
-	width: 300px;
+	width: 350px;
 	height: 40px;
 	line-height: 40px;
 	text-align: center;
 	font-size: 2em;
 }
 .info{
-	width: 300px;
+	width: 350px;
 	height: 40px;
 	line-height: 40px;
 	font-size: 1em;
@@ -294,4 +338,18 @@ cursor: pointer;
 
 .left{
 	float: left !important;
+}
+
+.data{
+	font-weight: bold;
+	font-size: 1.5em;
+}
+
+#infoTitle{
+	text-transform: capitalize;
+}
+
+
+.arial{
+	font-family: arial !important;
 }

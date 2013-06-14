@@ -19,7 +19,7 @@
 	<div id="formulaire">
 		<form name="form" id="form" method="post">
 			<div class="inputs_text">
-		           <input type="text" id="first_input" class="input_text" name="depart" id="depart" placeholder='Indiquez votre adresse ou gare de départ...'/>
+		           <input type="text" id="first_input" class="input_text" name="depart" placeholder='Indiquez votre adresse ou gare de départ...'/>
 		           <input type="text" class="input_text" name="arrive" id="arrive" placeholder="Indiquez votre adresse ou gare d'arrivée"/>
 			</div>
 			<div id="form_button">
@@ -29,9 +29,10 @@
 
 	</div>
 	<div id="logo"><img src="img/logo.png" alt="logo EcoImpact"></div>
+	<div id="phrase_intro">Mesure l’impact de ton trajet sur la couche d’ozone</div>
 	<div id="conteneur">
 		<div  id="cercle">
-			<div id="phrase"> Indice de pollution <br> <span class="gramme" >50/100</span></div>
+			<div id="phrase"> Indice de pollution <br> dans Paris <br> <span class="gramme" >35/100</span></div>
 		</div>
 		<div class="trait" id="velib">
 			<img src="img/velo.ico.png" alt="image velib" id="imgvelib" class="imgtrait">
@@ -55,14 +56,13 @@
 	
 	<div id="information">
 		<div class="data" id="infoTitle"></div>
-		<div class="info" id="temps">Durée : <span class="data" id="tempsData"></span></div>
-		<div class="info" id="distance">Distance : <span class="data" id="distancesData"></span></div>
-		<div class="info" id="cout">Coût : <span class="data" id="coutData"></span></div>
-		<div class="info" id="emission">Émission : <span class="data" id="emissionData"></span></div>
+		<div class="info" id="temps">Durée : <span class="data" id="tempsData"></span> <span class="arial">min</span></div>
+		<div class="info" id="distance">Distance : <span class="data" id="distancesData"></span> <span class="arial">km</span></div>
+		<div class="info" id="cout">Coût : <span class="data" id="coutData"></span> <span class="arial">€</span></div>
+		<div class="info" id="emission">Émission : <span class="data" id="emissionData"></span> <span class="arial">g</span></div>
 	</div>
 
 
-	<div id="route"></div>
 
 
 </body>

@@ -69,7 +69,7 @@ calculate = function(){
 
 
               duration_car = Math.round((response.routes[0].legs[0].duration.value)*0.0166);
-              console.log("duration top "+duration_car);
+              // console.log("duration top "+duration_car);
 
               duration_autolib=Math.round(duration_car*1.17);
              // console.log("autolib"+duration_autolib);
